@@ -87,9 +87,9 @@ class BitbucketOAuthenticator(OAuthenticator):
         resp_json = json.loads(resp.body.decode('utf8', 'replace'))
 
         username = resp_json["username"]
-        whitelisted = yield self.check_whitelist(username, headers)
-        if not whitelisted:
-            username = None
+        #whitelisted = yield self.check_whitelist(username, headers)
+        #if not whitelisted:
+        #    username = None
         return username
 
     def check_whitelist(self, username, headers):
